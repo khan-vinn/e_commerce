@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function Products({ products, addToCard, removeFromCard }) {
+function Products({ products, selectedProducts, addToCard, removeFromCard }) {
 
 
     const selectIdFun = (id) => {
@@ -15,6 +15,7 @@ function Products({ products, addToCard, removeFromCard }) {
     return products.map((elem) => (
         <Product
             key={elem.id}
+            selectedProducts={selectedProducts}
             toDisSelect={disSelectIdFun}
             toSelectClick={selectIdFun}
             {...elem}
@@ -22,9 +23,10 @@ function Products({ products, addToCard, removeFromCard }) {
     ));
 }
 
-function Product({ amount, id, price, title,toDisSelect, toSelectClick }) {
+function Product({ amount, id, price, selectedProducts, title,toDisSelect, toSelectClick }) {
+    const isIncludeInSelectedLists = ()=> selectedProducts.includes(id)
 
-    const [disabled, setDisable] = useState(false);
+    const [disabled, setDisable] = useState(isIncludeInSelectedLists());
 
     const onNameSelected = () => {
         toSelectClick(id);
