@@ -1,10 +1,10 @@
 import { combineReducers, createStore } from "redux";
 import ProductReducer from "./reducers/products";
-import CardReducer from "./reducers/cards";
+import SelectedProductsReducer from "./reducers/selectedProducts";
 
 const combinedReducer = combineReducers({
     products: ProductReducer,
-    cards: CardReducer,
+    selectedProducts: SelectedProductsReducer,
 });
 
 const store = createStore(combinedReducer);

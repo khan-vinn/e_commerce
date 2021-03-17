@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
 import ProductsPage from "./products";
 import SelectedProducts from "./selectedProducts";
-import { addToCard,removeFromCard } from "../../store/reducers/cards";
+import { addToCard,removeFromCard } from "../../store/reducers/selectedProducts";
 
 const mapStateToPropsToProducts = (state) => ({ products: state.products });
 const mapStateToProsToSelectedProducts = (state) => ({
     products: state.products,
-    cards: state.cards,
+    selectedProducts: state.selectedProducts,
 });
 
 export const ConnectedSelectedProducts = connect(

@@ -1,27 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-let selectedIdToR = [];
 
 function Products({ products, addToCard, removeFromCard }) {
 
-    let [selectedId, setId] = useState([]);
 
     const selectIdFun = (id) => {
-        setId([...selectedId, id]);
+        addToCard(id);
     };
+
     const disSelectIdFun = (id) => {
         removeFromCard(id)
-    };
-
-    useEffect(() => {
-        selectedIdToR = [...selectedId];
-    }, [selectedId]);
-
-    useEffect(() => {
-        return () => {
-            addToCard(selectedIdToR);
-        };
-    }, []);
+    };    
 
     return products.map((elem) => (
         <Product
