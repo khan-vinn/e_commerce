@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import AddProduct from "./components/products/addProduct";
+import Header from "./components/header/header";
+import CheckCard from "./components/header/header";
+import NotFound from "./components/NotFound";
+import {
+    ConnectedProducts,
+    ConnectedSelectedProducts,
+} from "./components/products/container";
+import ProductSelected from "./components/";
+import "./App.css";
+
+function RoutesSetting() {
+    return (
+        <main>
+            <Switch>
+                <Route path="/selected">
+                    <ConnectedSelectedProducts />
+                </Route>
+                <Route path="/products">
+                    <ConnectedProducts />
+                </Route>
+                <Route path="/add-product">
+                    <AddProduct />
+                </Route>
+                <Route path="/product/:id">
+                    <ProductSelected />
+                </Route>
+                <Route path="/check-card">
+                    <CheckCard />
+                </Route>
+                <Route>
+                    <NotFound />
+                </Route>
+            </Switch>
+        </main>
+    );
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <div className="app">
+                <Header />
+                <RoutesSetting />
+            </div>
+        </Router>
+    );
 }
 
 export default App;
