@@ -1,16 +1,20 @@
 import { useRef } from "react";
 
-function AddProduct(params) {
+function AddProduct({ addProduct }) {
     const productName = useRef();
     const productPrice = useRef();
     const productAmount = useRef();
 
-   
     const addValue = (e) => {
         e.preventDefault();
-        console.log(
-            `{name: ${productName.current.value}, price: ${productPrice.current.value}, amount: ${productAmount.current.value} }`
-        );
+        addProduct({
+            title: productName.current.value,
+            price: productPrice.current.value,
+            amount: productAmount.current.value,
+        });
+        productName.current.value = "";
+        productPrice.current.value = "";
+        productAmount.current.value = "";
     };
     return (
         <form onSubmit={addValue}>
@@ -21,6 +25,7 @@ function AddProduct(params) {
                     ref={productName}
                     name="productName"
                     type="text"
+                    placeholder="Insert here product title"
                     required
                 />
             </div>
@@ -32,6 +37,7 @@ function AddProduct(params) {
                     ref={productPrice}
                     name="productPrice"
                     type="number"
+                    placeholder="Insert here product price"
                     required
                 />
             </div>
@@ -42,6 +48,7 @@ function AddProduct(params) {
                 <input
                     ref={productAmount}
                     name="productAmount"
+                    placeholder="Insert here product amount"
                     type="number"
                     required
                 />

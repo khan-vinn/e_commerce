@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import AddProduct from "./components/products/addProduct";
 import Header from "./components/header/header";
 import CheckCard from "./components/header/header";
 import NotFound from "./components/NotFound";
 import {
     ConnectedProducts,
     ConnectedSelectedProducts,
+    ConnectedFromToAddNewProduct
 } from "./components/products/container";
 import ProductSelected from "./components/";
 import "./App.css";
@@ -21,7 +21,7 @@ function RoutesSetting() {
                     <ConnectedProducts />
                 </Route>
                 <Route path="/add-product">
-                    <AddProduct />
+                    <ConnectedFromToAddNewProduct />
                 </Route>
                 <Route path="/product/:id">
                     <ProductSelected />

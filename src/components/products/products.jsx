@@ -23,7 +23,7 @@ function Products({ products, selectedProducts, addToCard, removeFromCard }) {
     ));
 }
 
-function Product({ amount, id, price, selectedProducts, title,toDisSelect, toSelectClick }) {
+function Product({ amount, id, price, selectedProducts, title,toDisSelect, toSelectClick, }) {
     const isIncludeInSelectedLists = ()=> selectedProducts.includes(id)
 
     const [disabled, setDisable] = useState(isIncludeInSelectedLists());
