@@ -1,7 +1,7 @@
 const ADD_PRODUCT_COUNT_TO_CARD = "ADD_PRODUCT_COUNT_TO_CARD";
 const REMOVE_COUNT_FROM_CARD = "REMOVE_COUNT_FROM_CARD";
 const INITIALIZE_PRODUCT_COUNT = "INITIALIZE_PRODUCT_COUNT";
-
+const NULL_CONFIG = "NULL_CONFIG";
 const initialState = [];
 
 const SelectedProductsCountReducer = (state = initialState, action) => {
@@ -32,11 +32,14 @@ const SelectedProductsCountReducer = (state = initialState, action) => {
                     }
                 })
                 .filter((item) => item);
+        case NULL_CONFIG:
+            return [];
         default:
             return state;
     }
 };
 
+export const NullConfigProductCounts = () => ({ type: NULL_CONFIG });
 export const addCountToCard = (payload) => ({
     type: ADD_PRODUCT_COUNT_TO_CARD,
     payload,

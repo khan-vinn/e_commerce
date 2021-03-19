@@ -1,5 +1,6 @@
 const ADD_PRODUCT_TO_CARD = "ADD_PRODUCT_TO_CARD";
 const REMOVE_FROM_CARD = "REMOVE_FROM_CARD";
+const NULL_CONFIG = "NULL_CONFIG"
 
 const initialState = [];
 
@@ -13,6 +14,8 @@ const SelectedProductsReducer = (state = initialState, action) => {
             return state.filter(
                 (elem) => elem !== action.payload && typeof elem === "number"
             );
+        case NULL_CONFIG:
+            return []
         default:
             return state;
     }
@@ -23,5 +26,5 @@ export const removeFromCard = (payload) => ({
     type: REMOVE_FROM_CARD,
     payload,
 });
-
+export const NullConfigSelectedProducts = ()=> ({type:NULL_CONFIG})
 export default SelectedProductsReducer;

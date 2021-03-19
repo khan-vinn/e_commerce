@@ -12,7 +12,7 @@ const CardReducer = (state = initialState, { type, payload }) => {
 };
 export default CardReducer;
 
-export const initializeCard = (payload) => ({
+export const InitializeCard = (payload) => ({
     type: INITIALIZE_CARDS,
     payload,
 });
