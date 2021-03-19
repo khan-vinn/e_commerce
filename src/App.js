@@ -9,6 +9,7 @@ import {
 } from "./components/products/container";
 import ProductSelected from "./components/";
 import "./App.css";
+import Cards from "./components/cards/container";
 
 function RoutesSetting() {
     return (
@@ -16,6 +17,9 @@ function RoutesSetting() {
             <Switch>
                 <Route path="/selected">
                     <ConnectedSelectedProducts />
+                </Route>
+                <Route path="/cards">
+                    <Cards />
                 </Route>
                 <Route path="/products">
                     <ConnectedProducts />

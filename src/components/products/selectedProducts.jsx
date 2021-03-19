@@ -6,11 +6,21 @@ export default function SelectedProducts({ selectedProducts, products }) {
             {products.map((el) => (
                 <ProductMapper key={el.id} {...el} {...selectedProducts} />
             ))}
+            <button
+                id="btn"
+                onClick={() =>
+                    alert(
+                        "Should be null in selected and count reducer store/ push to '/cards' and show how cost all shopping"
+                    )
+                }
+            >
+                Order
+            </button>
         </>
     );
 }
 function ProductMapper(props) {
-    const { id, title, amount, price, ...selectedId } = props
+    const { id, title, amount, price, ...selectedId } = props;
     return (
         <>
             {Object.entries(selectedId).map((e) => {
@@ -29,21 +39,37 @@ function ProductMapper(props) {
 }
 
 export function Product(props) {
-    const { id, title, amount, price, addCountToCard, initializeProductCount } = props
-    const [count, setCount] = useState(0);
+    const {
+        id,
+        title,
+        amount,
+        price,
+        addCountToCard,
+        initializeProductCount,
+        productCount,
+    } = props;
+    const thisProductCount = productCount.filter((elem) => elem.id === id);
+    const [count, setCount] = useState(
+        thisProductCount[0] ? thisProductCount[0].count : 0
+    );
     const addToCount = () => {
         // amount > count && setCount(count + 1)
         if (amount > count) {
             if (count === 0) {
-                initializeProductCount({ id, count: count+1 });
+                initializeProductCount({ id, count: count + 1 });
                 setCount(count + 1);
             } else {
-                setCount(count + 1)
-                addCountToCard({ id, count: count+1 })
+                addCountToCard({ id, count: count + 1 });
+                setCount(count + 1);
             }
         }
     };
-    const removeFromCount = () => count > 0 && setCount(count - 1);
+    const removeFromCount = () => {
+        if (count > 0) {
+            addCountToCard({ id, count: count - 1 });
+            setCount(count - 1);
+        }
+    };
 
     return (
         <>

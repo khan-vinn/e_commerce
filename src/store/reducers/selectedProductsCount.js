@@ -13,10 +13,10 @@ const SelectedProductsCountReducer = (state = initialState, action) => {
                         elem.count = action.payload.count;
                         return elem;
                     } else {
-                        return null;
+                        return elem;
                     }
                 })
-                .filter(Object);
+                .filter((item) => item);
         case INITIALIZE_PRODUCT_COUNT:
             return [
                 ...state,
@@ -31,7 +31,7 @@ const SelectedProductsCountReducer = (state = initialState, action) => {
                         return elem;
                     }
                 })
-                .filter(Object);
+                .filter((item) => item);
         default:
             return state;
     }
