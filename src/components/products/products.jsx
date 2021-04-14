@@ -57,12 +57,12 @@ function Product(props) {
                     {title} - {price}$
                 </h1>
                 {!disabled && (
-                    <button disabled={disabled} onClick={onNameSelected}>
+                    <button id="select__btn" disabled={disabled} onClick={onNameSelected}>
                         Select
                     </button>
                 )}
                 {disabled && (
-                    <button onClick={onNameDesSelected}>Remove</button>
+                    <button id="remove__btn" onClick={onNameDesSelected}>Remove</button>
                 )}
             </div>
         </div>

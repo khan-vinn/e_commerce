@@ -1,5 +1,6 @@
 .app {
     main {
+        padding-top: 1em;
         grid-row: 2;
         grid-column: 1/4;
         .product_list__style {
@@ -12,17 +13,43 @@
                 flex-direction: row;
                 justify-content: left;
                 align-items: center;
+                border-bottom: 1px solid rgba(173, 172, 172, 0.363);
                 &:hover {
                     background-color: #fffefe;
+                    box-shadow: 0 0 5px #777;
                 }
                 img {
                     width: 6em;
-                    background-color: rgba(246, 8, 8, 0.856);
+                    background-color: rgba(255, 0, 0, 0.719);
                     height: 6em;
                 }
                 .item_name__action {
                     padding-left: 2em;
                     margin-top: -1em;
+                    button {
+                        color: rgb(46, 41, 41);
+                        font-size: 18px;
+                        &#select__btn{
+                            background-color: rgba(100, 209, 124, 0.63);
+                            border:none;
+                            padding: 4px;
+                            border-radius: 7px;
+                            outline: none;
+                        }
+                        &#remove__btn{
+                            background-color: rgba(255, 0, 0, 0.691);
+                            border:none;
+                            padding: 4px;
+                            border-radius: 8px;
+                            outline: none;
+                        }
+                        &:active{
+                            background-color: rgba(72, 241, 185, 0.938);
+                            box-shadow: none;
+                            transform: translateX(-1em);
+                            transition-duration: 0.2s        
+                        }
+                    }
                 }
             }
         }
