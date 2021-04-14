@@ -1,0 +1,61 @@
+.app {
+    main {
+        .product_add_from__style {
+            font-size: 22px;
+            margin-left: auto;
+            color: rgb(65, 73, 73);
+            margin-right: auto;
+            text-align: center;
+
+            label {
+            }
+            .form__error {
+                color: red;
+                display: block;
+            }
+            .add_submit__btn {
+                font-size: 20px;
+                margin-top: 3em;
+                margin-left: 25em;
+                padding: 0.9em;
+                color: #f0f0f0;
+                background-color: rgb(54, 130, 192);
+                outline: none;
+                border: none;
+                box-shadow: 0 2px #999;
+                border-radius: 5px;
+                &:hover {
+                    background-color: rgba(27, 162, 195, 0.822);
+                }
+                &:active {
+                    background-color: rgba(9, 101, 187, 0.938);
+                    box-shadow: none;
+                    transform: translateY(3px);
+                }
+            }
+            input {
+                border: none;
+                outline: none;
+                padding: 1em;
+                margin: 1em;
+                &:focus {
+                    border-bottom: 0.1px solid rgb(73, 112, 175);
+                    box-shadow: 0 0 4px rgb(77, 91, 214);
+                }
+                &:invalid {
+                    color: red;
+                }
+            }
+        }
+    }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}

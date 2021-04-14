@@ -1,0 +1,103 @@
+.app {
+    main {
+        grid-row: 2;
+        grid-column: 1/4;
+        .product_list__style {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #f0f0f0;
+            .product_item__style {
+                padding: 0.4em;
+                display: flex;
+                flex-direction: row;
+                justify-content: left;
+                align-items: center;
+                &:hover {
+                    background-color: #fffefe;
+                }
+                img {
+                    width: 6em;
+                    background-color: rgba(246, 8, 8, 0.856);
+                    height: 6em;
+                }
+                .item_name__action {
+                    padding-left: 2em;
+                    margin-top: -1em;
+                }
+            }
+        }
+        .selected_product__style {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: rgba(232, 243, 255, 0.835);
+            padding: 1em;
+            padding-bottom: 2em;
+            .selected_item__style {
+                padding: 1.4em;
+                margin: 0.5em;
+                color: rgb(39, 38, 38);
+                background-color: #f8f8f8;
+                border-radius: 10px;
+                &:hover {
+                    box-shadow: 0 0 10px rgb(73, 69, 69);
+                }
+                h1 {
+                    color: rgb(63, 58, 58);
+                }
+                .succ__btn {
+                    padding: 0.9em;
+                    margin-left: 0.8em;
+                    color: #f0f0f0;
+                    background-color: rgb(7, 153, 51);
+                    outline: none;
+                    border: none;
+                    box-shadow: 0 2px #999;
+                    border-radius: 5px;
+                    &:hover {
+                        background-color: rgba(7, 153, 51, 0.822);
+                    }
+                    &:active {
+                        background-color: rgba(0, 255, 170, 0.938);
+                        box-shadow: none;
+                        transform: translateY(3px);
+                    }
+                }
+                .danger__btn {
+                    padding: 0.9em;
+                    margin-right: 0.8em;
+                    color: #f0f0f0;
+                    background-color: rgba(246, 8, 8, 0.856);
+                    outline: none;
+                    border: none;
+                    box-shadow: 0 2px #999;
+                    border-radius: 5px;
+                    &:hover {
+                        background-color: rgba(246, 8, 8, 0.78);
+                    }
+                    &:active {
+                        background-color: rgb(255, 187, 0);
+                        box-shadow: none;
+                        transform: translateY(3px);
+                    }
+                }
+            }
+            .selected_pr_order__btn {
+                align-self: flex-end;
+                cursor: pointer;
+                font-size: 20px;
+                padding: 1em;
+                background-color: antiquewhite;
+                border-radius: 10px;
+                outline: none;
+                border: none;
+                box-shadow: 0 9px #999;
+                &:active {
+                    background-color: #525552;
+                    box-shadow: 0 4px #666, 0 10px #666;
+                    transform: translateY(4px);
+                }
+            }
+        }
+    }
+}

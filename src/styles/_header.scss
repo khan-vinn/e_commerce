@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+.app {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-left: 14em;
+    header {
+        grid-column: 1/4;
+        grid-row: 1;
+        padding: 2em;
+        background-color: rgb(91, 163, 223);
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 1em;
+            padding-top: 1.8em;
+            padding-bottom: 1.4em;
+            outline: none;
+            font-size: 22px;
+            border: none;
+            &:hover {
+                background-color: rgb(84, 149, 202);
+                color: rgb(219, 216, 216);
+            }
+            &.active {
+                color: rgb(238, 235, 232);
+                background-color: rgb(84, 135, 218);
+            }
+        }
+    }
+}

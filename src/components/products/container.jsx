@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
-import AddProduct from "./addProduct";
+import AddProduct from "../productForm/addProduct";
 import ProductsPage from "./products";
 import SelectedProducts from "./selectedProducts";
-import { Product } from "./selectedProducts";
+import { Product } from "./productMapper";
 import { addProduct } from "../../store/reducers/products";
 import {
     addCountToCard,

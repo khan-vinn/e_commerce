@@ -10,7 +10,7 @@ import {
 import ProductSelected from "./components/";
 import "./App.css";
 import Cards from "./components/cards/container";
-
+import "./styles/style.scss"
 function RoutesSetting() {
     return (
         <main>
