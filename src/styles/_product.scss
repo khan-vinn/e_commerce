@@ -29,25 +29,25 @@
                     button {
                         color: rgb(46, 41, 41);
                         font-size: 18px;
-                        &#select__btn{
+                        &#select__btn {
                             background-color: rgba(100, 209, 124, 0.63);
-                            border:none;
+                            border: none;
                             padding: 4px;
                             border-radius: 7px;
                             outline: none;
                         }
-                        &#remove__btn{
+                        &#remove__btn {
                             background-color: rgba(255, 0, 0, 0.691);
-                            border:none;
+                            border: none;
                             padding: 4px;
                             border-radius: 8px;
                             outline: none;
                         }
-                        &:active{
+                        &:active {
                             background-color: rgba(72, 241, 185, 0.938);
                             box-shadow: none;
                             transform: translateX(-1em);
-                            transition-duration: 0.2s        
+                            transition-duration: 0.2s;
                         }
                     }
                 }
