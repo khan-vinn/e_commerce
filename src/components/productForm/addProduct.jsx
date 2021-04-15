@@ -1,8 +1,13 @@
 import { Notyf } from "notyf";
 import { useForm } from "react-hook-form";
-import "notyf/notyf.min.css";
 
-const notyf = new Notyf();
+const notyf = new Notyf({
+    position: {
+        x: "left",
+        y: "top",
+    },
+    duration: 9000,
+});
 
 function AddProduct({ addProduct }) {
     const {
@@ -11,7 +16,7 @@ function AddProduct({ addProduct }) {
         formState: { errors },
         reset,
     } = useForm();
- 
+
     const addValue = (data) => {
         addProduct({
             title: data.productName,

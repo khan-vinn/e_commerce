@@ -1,6 +1,13 @@
 import { ProductMapper } from "./productMapper";
+import { useHistory } from "react-router-dom";
 
-export default function SelectedProducts({ selectedProducts, products }) {
+export default function SelectedProducts(props) {
+    const { selectedProducts, products, ToCardSelectedProducts } = props;
+    let history = useHistory();
+    const btnSubmitAction = () => {
+        ToCardSelectedProducts();
+        history.push("/cards");
+    };
     return (
         <div className="selected_product__style">
             {products.map((el) => (
@@ -10,11 +17,7 @@ export default function SelectedProducts({ selectedProducts, products }) {
                 <button
                     className="selected_pr_order__btn"
                     id="btn"
-                    onClick={() =>
-                        alert(
-                            "Should be null in selected and count reducer store/ push to '/cards' and show how cost all shopping"
-                        )
-                    }
+                    onClick={btnSubmitAction}
                 >
                     Order
                 </button>

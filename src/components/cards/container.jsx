@@ -1,13 +1,11 @@
-import { connect } from 'react-redux'
-import Cards from './cards'
+import { connect } from "react-redux";
+import Cards from "./cards";
 
 const mapStateToProps = (state) => ({
     products: state.products,
-    counts: state.counts
-})
+    cards: state.cards,
+});
 
-const mapDispatchToProps = {
-    
-}
+const mapDispatchToProps = () => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cards)
+export default connect(mapStateToProps, mapDispatchToProps)(Cards);

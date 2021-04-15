@@ -5,12 +5,16 @@ import NotFound from "./components/NotFound";
 import {
     ConnectedProducts,
     ConnectedSelectedProducts,
-    ConnectedFromToAddNewProduct
+    ConnectedFromToAddNewProduct,
 } from "./components/products/container";
 import ProductSelected from "./components/";
 import "./App.css";
 import Cards from "./components/cards/container";
-import "./styles/style.scss"
+import "./styles/style.scss";
+import "notyf/notyf.min.css";
+import SignIn from "./components/auth/signIn/signIn";
+import SignUp from "./components/auth/signUp/SignUp";
+
 function RoutesSetting() {
     return (
         <main>
@@ -32,6 +36,12 @@ function RoutesSetting() {
                 </Route>
                 <Route path="/check-card">
                     <CheckCard />
+                </Route>
+                <Route path="/login">
+                    <SignIn />
+                </Route>
+                <Route path="/signUp">
+                    <SignUp />
                 </Route>
                 <Route>
                     <NotFound />

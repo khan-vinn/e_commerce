@@ -12,6 +12,7 @@ import {
     addToCard,
     removeFromCard,
 } from "../../store/reducers/selectedProducts";
+import ToCardSelectedProducts from "../../store/reducers/null_config";
 
 const mapStateToPros = (state) => ({
     products: state.products,
@@ -23,9 +24,9 @@ const mapStateToProsToProductCounts = (state) => ({
     productCount: state.counts,
 });
 
-export const ConnectedSelectedProducts = connect(mapStateToPros)(
-    SelectedProducts
-);
+export const ConnectedSelectedProducts = connect(mapStateToPros, {
+    ToCardSelectedProducts,
+})(SelectedProducts);
 
 export const ConnectedFromToAddNewProduct = connect(null, { addProduct })(
     AddProduct

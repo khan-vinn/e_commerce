@@ -28,6 +28,6 @@ const ProductReducer = (state = initialState, action) => {
     }
 };
 
-export const addProduct = (payload)=> ({type: ADD_PRODUCT, payload})
+export const addProduct = (payload) => ({ type: ADD_PRODUCT, payload });
 
 export default ProductReducer;
