@@ -51,7 +51,7 @@ function Product(props) {
 
     return (
         <div className="product_item__style">
-            <img />
+            <img alt="" />
             <div className="item_name__action">
                 <h1>
                     {title} - {price}$

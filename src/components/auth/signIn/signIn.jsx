@@ -22,7 +22,7 @@ export default function SignIn(props) {
     const SignUpSubmit = (data) => {
         console.log(data);
         reset({ login: "", pwd: "" });
-        notyf.error("successfully login");
+        notyf.success("successfully login");
     };
     return (
         <div>
